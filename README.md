@@ -39,7 +39,8 @@ When the target bin is on the opposite side, a hand-to-hand transfer is performe
 Available on Google Drive: https://drive.google.com/drive/u/1/folders/1PsBtCrXj4AE_7-ZICalc3jr7PMX_zbeD
 
 ## HuggingFace
-All datasets and models: https://huggingface.co/Louislerikiki
+Dataset: https://huggingface.co/datasets/Louislerikiki/bimanual_sort_by_weight_v2
+Models: https://huggingface.co/Louislerikiki
 
 ## See also
 - [Project History](docs/project_history.md) — previous single-camera setup and experiments
