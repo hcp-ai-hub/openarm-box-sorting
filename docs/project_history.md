@@ -47,7 +47,7 @@ Boxes in random positions. Hand-to-hand transfer when target bin is on the oppos
 #### ACT baseline and ablations
 | Model | HuggingFace | Config | Steps | Physical result |
 |-------|-------------|--------|-------|-----------------|
-| `act_sort_by_weight_multicam_v1` | [link](https://huggingface.co/Louislerikiki/act_sort_by_weight_multicam_v1) | 6 cams, 1 layer, no dropout | 200k | Grasps boxes, no hand-to-hand transfer |
+| `act_sort_by_weight_multicam_v1` | [link](https://huggingface.co/Louislerikiki/act_sort_by_weight_multicam_v1) | 6 cams, 1 layer, no dropout | 200k | Grasps boxes, performs hand-to-hand transfer |
 | `act_sort_by_weight_dropout_v1` | [link](https://huggingface.co/Louislerikiki/act_sort_by_weight_dropout_v1) | 6 cams, 1 layer, 80% uniform state dropout | 1M | Best result: grasps + occasional hand-to-hand |
 | `act_sort_by_weight_decoder4_louis` | [link](https://huggingface.co/Louislerikiki/act_sort_by_weight_decoder4_louis) | 6 cams, 4 decoder layers | 150k | Improved attention on workspace vs borders |
 | `act_sort_by_weight_no_depth` | [link](https://huggingface.co/Louislerikiki/act_sort_by_weight_no_depth) | RGB only (no depth), 4 layers | 150k | Similar to full model |
