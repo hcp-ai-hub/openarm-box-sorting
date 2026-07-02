@@ -38,7 +38,7 @@ Boxes in random positions. Hand-to-hand transfer when target bin is on the oppos
 
 ### Dataset
 - `Louislerikiki/bimanual_sort_by_weight_v2` — 100 episodes, ~249k frames, 30fps
-- HuggingFace: https://huggingface.co/Louislerikiki/bimanual_sort_by_weight_v2
+- HuggingFace: https://huggingface.co/datasets/Louislerikiki/bimanual_sort_by_weight_v2
 
 ### Models trained
 | Model | HuggingFace | Description | Physical eval result |
