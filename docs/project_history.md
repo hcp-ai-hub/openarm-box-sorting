@@ -88,3 +88,60 @@ lerobot-record \
   --robot.right_arm_config.max_relative_target=8 \
   --dataset.video_backend=pyav
 ```
+
+---
+
+## Previous Tasks (Phase 0) — Single Camera, Fully Working
+
+These tasks were completed successfully before moving to the sort-by-weight challenge.
+Demo videos available on Google Drive: https://drive.google.com/drive/u/1/folders/1PsBtCrXj4AE_7-ZICalc3jr7PMX_zbeD
+
+### Hardware (same for all)
+- Robot: 2x OpenArm follower, 7 DOF + gripper (can0=right, can1=left)
+- Single top-down camera: `observation.images.up` (640x480, 30fps)
+- LeRobot 0.5.2, `--dataset.video_backend=pyav`
+
+### Task 1 — Pick and Drop (single arm, left)
+- **Model**: `Louislerikiki/pick_place_left_policy`
+- **Description**: Left arm only. Picks a box from random position, drops it into a bin. Box always same orientation.
+- **Result**: 100% functional ✅
+- **Eval command**:
+```bash
+lerobot-record \
+  --policy.path=Louislerikiki/pick_place_left_policy \
+  --robot.type=bi_openarm_follower \
+  --robot.cameras="{up: {type: opencv, index_or_path: /dev/video0, fps: 30, width: 640, height: 480}}" \
+  --policy.n_action_steps=100 \
+  --interpolation_multiplier=2 \
+  --robot.right_arm_config.max_relative_target=8
+```
+
+### Task 2 — Hand-to-Hand Transfer (bimanual)
+- **Model**: `Louislerikiki/act_pick_and_drop_bimanual_v1`
+- **Description**: Bimanual task. Fixed initial box position. One arm picks, transfers to the other arm mid-air.
+- **Result**: 100% functional ✅
+- **Eval command**:
+```bash
+lerobot-record \
+  --policy.path=Louislerikiki/act_pick_and_drop_bimanual_v1 \
+  --robot.type=bi_openarm_follower \
+  --robot.cameras="{up: {type: opencv, index_or_path: /dev/video0, fps: 30, width: 640, height: 480}}" \
+  --policy.n_action_steps=100 \
+  --interpolation_multiplier=2 \
+  --robot.right_arm_config.max_relative_target=8
+```
+
+### Task 3 — Sort by Weight (single arm, fixed position)
+- **Model**: `Louislerikiki/act_sort_by_weight_v2`
+- **Description**: Single arm. Fixed box position. Sorts into correct bin based on weight (detected via joint torque).
+- **Result**: 100% functional ✅
+- **Eval command**:
+```bash
+lerobot-record \
+  --policy.path=Louislerikiki/act_sort_by_weight_v2 \
+  --robot.type=bi_openarm_follower \
+  --robot.cameras="{up: {type: opencv, index_or_path: /dev/video0, fps: 30, width: 640, height: 480}}" \
+  --policy.n_action_steps=100 \
+  --interpolation_multiplier=2 \
+  --robot.right_arm_config.max_relative_target=8
+```
