@@ -1,56 +1,56 @@
 # Scripts Guide
 
 ## dropout_search.py
-Grid search automatique sur les configurations de state dropout.
-Lance 10-22 mini-trainings en séquence, mesure le ratio vision/proprioception pour chaque config, sauvegarde les résultats en JSON.
+Automatic grid search over state dropout configurations.
+Runs 10-22 mini-trainings in sequence, measures vision/proprioception ratio for each config, saves results to JSON.
 
 ```bash
 python3 scripts/dropout_search.py
-# Résultats dans: /home/soriano/lerobot/dropout_search_results.json
+# Results saved to: /home/soriano/lerobot/dropout_search_results.json
 ```
 
 ## auto_pipeline.py
-Pipeline automatique : attend la fin de la grid search → sélectionne la meilleure config → lance le training final.
+Automated pipeline: waits for grid search to finish → selects best config → launches final training.
 
 ```bash
 nohup python3 scripts/auto_pipeline.py > /tmp/auto_pipeline_log.txt 2>&1 &
 ```
 
 ## visualize_attention.py
-Génère des heatmaps d'attention du transformer (cross-attention decoder) superposées sur les images des caméras.
-Permet de visualiser où le modèle "regarde" pour prendre ses décisions.
+Generates transformer attention heatmaps (decoder cross-attention) overlaid on camera images.
+Allows visualizing where the model "looks" when making decisions.
 
 ```bash
-# Frame 20, modele baseline
+# Frame 20, baseline model
 python3 scripts/visualize_attention.py Louislerikiki/act_sort_by_weight_multicam_v1 20
 # Output: /tmp/attention_top_rgb_frame20.jpg etc.
 ```
 
 ## chunk_fidelity_test.py
-Mesure la fidélité du chunk d'actions prédit par rapport aux actions réelles du dataset.
-Donne un score L1 moyen sur N échantillons aléatoires.
-Note: cette métrique ne corrèle pas de façon fiable avec la qualité physique réelle du grasp.
+Measures fidelity of predicted action chunk vs real dataset actions.
+Returns mean L1 score over N random samples.
+Note: this metric does not reliably correlate with physical grasp quality.
 
 ```bash
 python3 scripts/chunk_fidelity_test.py Louislerikiki/act_sort_by_weight_multicam_v1 100
 ```
 
 ## annotation_server.py
-Serveur web Flask pour annoter manuellement les phases de la tâche sur les épisodes du dataset.
-Utilisé pour préparer les labels d'importance des caméras pour BFA (Best-Feature-Aware Fusion).
+Flask web server for manually annotating task phases on dataset episodes.
+Used to prepare camera importance labels for BFA (Best-Feature-Aware Fusion).
 
 ```bash
 python3 scripts/annotation_server.py
-# Ouvre http://[IP]:5050 dans le navigateur
-# Touches: T=top view, D=wrist droit, G=wrist gauche, flèches=navigation
+# Open http://[IP]:5050 in browser
+# Keys: T=top view, D=right wrist, G=left wrist, arrows=navigation
 ```
 
 ## annotate_phases.py
-Version CLI de l'outil d'annotation (alternative à annotation_server.py).
+CLI version of the annotation tool (alternative to annotation_server.py).
 
 ## build_relative_dataset.py
-Pré-calcule les états proprioceptifs de départ pour chaque épisode.
-Utilisé pour l'expérience de coordonnées relatives (soustraire la position initiale du state).
+Pre-computes per-episode starting proprioceptive states.
+Used for the relative coordinates experiment (subtract initial state from observations).
 
 ```bash
 python3 scripts/build_relative_dataset.py
