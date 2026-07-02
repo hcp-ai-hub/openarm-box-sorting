@@ -18,8 +18,7 @@ The robot uses relative encoders that reset at power-on — starting position mu
 - can3 = left leader arm
 - If CAN bus fails after reboot: `sudo ip link set can0 up type can bitrate 1000000 dbitrate 5000000 fd on` (same for can1/2/3)
 
-## Joint offsets
-- Right arm j3 has a slight offset at start — empirically improves grasp success
+## Grippers
 - Never touch grippers in reset scripts (manage manually)
 
 ## Eval parameters (Phase 2 — multi-camera ACT)

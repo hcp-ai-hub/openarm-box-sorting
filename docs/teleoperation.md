@@ -88,7 +88,7 @@ lerobot-train \
 - Gripper: indices 21 (right) and 45 (left)
 
 ## Technical notes
-- Stack: LeRobot 0.5.2, Python 3.12, venv `/home/soriano/lerobot/.venv312`
+- Stack: LeRobot 0.5.2, Python 3.12
 - `torchcodec` is broken — always use `--dataset.video_backend=pyav`
 - HuggingFace upload requires `HF_HUB_DISABLE_XET=1` prefix
 - Gravity compensation is always active on the follower arms
