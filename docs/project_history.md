@@ -113,7 +113,7 @@ lerobot-record \
   --robot.cameras="{up: {type: opencv, index_or_path: /dev/video0, fps: 30, width: 640, height: 480}}" \
   --policy.n_action_steps=100 \
   --interpolation_multiplier=2 \
-  --robot.right_arm_config.max_relative_target=8
+  --robot.right_arm_config.max_relative_target=2
 ```
 
 ### Task 2 — Hand-to-Hand Transfer (bimanual)
@@ -128,7 +128,7 @@ lerobot-record \
   --robot.cameras="{up: {type: opencv, index_or_path: /dev/video0, fps: 30, width: 640, height: 480}}" \
   --policy.n_action_steps=100 \
   --interpolation_multiplier=2 \
-  --robot.right_arm_config.max_relative_target=8
+  --robot.right_arm_config.max_relative_target=2
 ```
 
 ### Task 3 — Sort by Weight (single arm, fixed position)
