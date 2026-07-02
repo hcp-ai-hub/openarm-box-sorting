@@ -1,5 +1,7 @@
 # Teleoperation & Data Collection
 
+> This workflow follows the official LeRobot tutorial: https://huggingface.co/docs/lerobot/en/il_robots
+
 ## Hardware
 - **Leader arms**: 2x OpenArm leader (can2=right, can3=left)
 - **Follower arms**: 2x OpenArm follower (can0=right, can1=left)
@@ -84,3 +86,10 @@ lerobot-train \
 - Torque indices: every 3rd element starting at offset 2 (indices 2,5,8,11,...,47)
 - right arm: indices 0-23, left arm: indices 24-47
 - Gripper: indices 21 (right) and 45 (left)
+
+## Technical notes
+- Stack: LeRobot 0.5.2, Python 3.12, venv `/home/soriano/lerobot/.venv312`
+- `torchcodec` is broken — always use `--dataset.video_backend=pyav`
+- HuggingFace upload requires `HF_HUB_DISABLE_XET=1` prefix
+- Gravity compensation is always active on the follower arms
+- `--dataset.streaming_encoding=false` recommended for stability
