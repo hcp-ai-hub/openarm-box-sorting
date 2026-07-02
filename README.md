@@ -15,12 +15,12 @@ When the target bin is on the opposite side, a hand-to-hand transfer is performe
 - 6 camera streams: top_rgb, top_depth, wrist_right_rgb, wrist_right_depth, wrist_left_rgb, wrist_left_depth
 
 ## Models (HuggingFace)
-| Model | Description | Notes |
-|-------|-------------|-------|
-| `act_sort_by_weight_multicam_v1` | ACT baseline, 6 cams, 1 decoder layer | Reference model |
-| `act_sort_by_weight_dropout_v1` | ACT + 80% uniform state dropout | Best hand-to-hand transfer observed |
-| `act_sort_by_weight_decoder4_louis` | ACT, 6 cams, 4 decoder layers | Improved attention focus on workspace |
-| `act_sort_by_weight_no_depth` | ACT, RGB only (no depth) | Similar to full model |
+| Model | Description | Physical result |
+|-------|-------------|-----------------|
+| `act_sort_by_weight_multicam_v1` | ACT baseline, 6 cams, 1 decoder layer | Best overall compromise: good grasping + reliable hand-to-hand transfer |
+| `act_sort_by_weight_dropout_v1` | ACT + 80% uniform state dropout | More precise grasping but slightly jerky, less reliable hand-to-hand transfer |
+| `act_sort_by_weight_decoder4_louis` | ACT, 6 cams, 4 decoder layers | Improved attention focus on workspace objects vs borders |
+| `act_sort_by_weight_no_depth` | ACT, RGB only (no depth) | Similar behavior to full model |
 
 ## Stack
 - LeRobot 0.5.2, Python 3.12, PyTorch
