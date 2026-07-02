@@ -34,3 +34,12 @@ When the target bin is on the opposite side, a hand-to-hand transfer is performe
 - `annotation_server.py` — Web tool for phase annotation (BFA preparation)
 - `annotate_phases.py` — CLI annotation tool
 - `build_relative_dataset.py` — Compute per-episode relative state offsets
+
+## Demo Videos
+Available on Google Drive: https://drive.google.com/drive/u/1/folders/1PsBtCrXj4AE_7-ZICalc3jr7PMX_zbeD
+
+## HuggingFace
+All datasets and models: https://huggingface.co/Louislerikiki
+
+## See also
+- [Project History](docs/project_history.md) — previous single-camera setup and experiments
