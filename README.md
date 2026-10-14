@@ -1,5 +1,11 @@
 # OpenArm Box Sorting — Bimanual Imitation Learning
 
+## Author
+
+**Louis Barthez** ([@LouisBarthez](https://github.com/LouisBarthez)): system setup, data collection, training and evaluation code, developed during a 16-week internship at AIST Tokyo Waterfront (Apr–Jul 2026), supervised by Shunki Itadera.
+
+*Commits were pushed from a shared lab workstation (em-sor account).*
+
 ## Task
 Bimanual sorting of cardboard boxes by weight using imitation learning (ACT).
 When the target bin is on the opposite side, a hand-to-hand transfer is performed between the two arms.
