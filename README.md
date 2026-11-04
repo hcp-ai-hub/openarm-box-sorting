@@ -4,6 +4,8 @@ Real-robot imitation learning on a bimanual 7-DoF OpenArm: a full record → tra
 
 **▶ Demo videos:** [ACT policy (main result)](https://huggingface.co/Louislerikiki/act_sort_by_weight_multicam_v1) · [VQ-BeT failure mode](https://huggingface.co/Louislerikiki/vqbet_sort_by_weight_topview_v1) · [full video archive](https://drive.google.com/drive/folders/1PsBtCrXj4AE_7-ZICalc3jr7PMX_zbeD)
 
+**📄 Technical report:** [Why do generative policies fail where ACT works? (PDF, 3 pages)](docs/openarm_technical_report.pdf)
+
 ## Author
 
 **Louis Barthez** ([@LouisBarthez](https://github.com/LouisBarthez)): system setup, data collection, training and evaluation code, developed during a 16-week internship at AIST Tokyo Waterfront (Apr–Jul 2026), supervised by Shunki Itadera.
@@ -83,6 +85,7 @@ For ACT, the predicted reach target correlates only weakly (and with inconsisten
 - `build_relative_dataset.py` — Compute per-episode relative state offsets
 
 ## Docs
+- [Technical report (PDF)](docs/openarm_technical_report.pdf)
 - [Teleoperation](docs/teleoperation.md)
 - [Scripts guide](docs/scripts_guide.md)
 - [Operational notes](docs/operational_notes.md)
